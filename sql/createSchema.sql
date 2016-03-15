@@ -30,7 +30,8 @@ CREATE TABLE Appointment (
     remarks TEXT,
     patient INTEGER REFERENCES Patient NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL,
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
+    CHECK date < endDate
 );
 
 CREATE TABLE Drug (
