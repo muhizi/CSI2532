@@ -18,7 +18,7 @@ CREATE TABLE Doctor (
     address VARCHAR(255) NOT NULL,
     tel VARCHAR(255) NOT NULL,
     specialty VARCHAR(255),
-    secretary INTEGER REFERENCES Secretary
+    secretary INTEGER REFERENCES Secretary ON DELETE SET NULL
 );
 
 CREATE TABLE Patient (

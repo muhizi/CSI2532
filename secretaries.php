@@ -21,6 +21,7 @@
             connectDB();
             $sql = "select * from pharmacy.Secretary;";
             $ret = pg_query($db, $sql);
+            closeDB();
             if(!$ret) {
                 echo pg_last_error($db);
             }
@@ -41,7 +42,6 @@
 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>

@@ -32,4 +32,20 @@ function setFlash($msg) {
     $_SESSION["flash"] = $msg;
 }
 
+function secretarySelect($id = -1) {
+    echo "<select name='secretary'>";
+    connectDB();
+    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Secretary order by id;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+}
+
 ?>

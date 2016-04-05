@@ -1,6 +1,6 @@
 SET search_path = Pharmacy;
 
-INSERT INTO Secretary VALUES (DEFAULT, 'BB', '4', 'Desert, Jakku', '444-444-4444'); -- 1
+INSERT INTO Secretary VALUES (DEFAULT, 'BB', '8', 'Desert, Jakku', '444-444-4444'); -- 1
 INSERT INTO Secretary VALUES (DEFAULT, 'C', '3PO', 'Tatooine', '222-222-2222'); -- 2
 
 INSERT INTO Doctor VALUES (DEFAULT, 'Han', 'Solo', 'Cockpit, Millenium Falcon', 'Han shot first', 'Womanizing', 2); -- 1
