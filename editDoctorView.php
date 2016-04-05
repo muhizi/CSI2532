@@ -8,7 +8,7 @@
     closeDB();
     if (!$ret) {
         setFlash("This isn't the doctor you're looking for.");
-        header("Location: secretaries.php");
+        header("Location: doctors.php");
         exit;
     }
 ?>
@@ -17,7 +17,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: New Doctor</title>
+    <title>Pharmabase :: Edit Doctor</title>
     <link rel="stylesheet" href="pharmabase.css">
 </head>
 <body>

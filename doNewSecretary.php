@@ -3,8 +3,6 @@
 
     connectDB();
 
-    print_r($_POST);
-
     $sql = "insert into pharmacy.Secretary (firstName, lastName, address, tel) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql, [$_POST["firstName"], $_POST["lastName"], $_POST["address"], $_POST["tel"]]);
     closeDB();
