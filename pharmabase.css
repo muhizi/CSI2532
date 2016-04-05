@@ -5,7 +5,7 @@ html, body {
     width: 100%;
 }
 
-body {
+body.home {
     background-image: url("r/cover.jpg");
     background-size: cover;
 }
