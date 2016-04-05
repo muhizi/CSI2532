@@ -22,7 +22,7 @@ INSERT INTO Appointment VALUES ('3000-01-01 18:00', '3000-01-01 20:00', '', 3, 1
 INSERT INTO Drug VALUES ('Tauntaun serum', 500, 'Tauntaun Serum Albumin', FALSE); -- 1
 INSERT INTO Drug VALUES ('TSA', 200, 'Tauntaun Serum Albumin', TRUE); -- 2
 INSERT INTO Drug VALUES ('Jakkufluxazol', 200, 'ARVT', FALSE); -- 3
-INSERT INTO Drug VALUES ('ARVT USP', 200, 'ARVT', True); -- 4
+INSERT INTO Drug VALUES ('ARVT USP', 200, 'ARVT', TRUE); -- 4
 INSERT INTO Drug VALUES ('Light Side in a Tablet', 200, 'Fluoroziphil', FALSE); -- 5
 INSERT INTO Drug VALUES ('Paratelomen', 200, 'Sodium Acetocarbonate Midicide', FALSE); -- 6
 INSERT INTO Drug VALUES ('MCPEG5 HeAL', 200, 'MCPEG5 Wild Gene', FALSE); -- 7

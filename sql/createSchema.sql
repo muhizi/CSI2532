@@ -3,12 +3,21 @@ CREATE SCHEMA Pharmacy;
 
 SET search_path = Pharmacy;
 
+CREATE TABLE Secretary (
+    firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    tel VARCHAR(255) NOT NULL
+    id SERIAL PRIMARY KEY
+);
+
 CREATE TABLE Doctor (
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
     tel VARCHAR(255) NOT NULL,
     specialty VARCHAR(255),
+    secretary INTEGER REFERENCES Secretary,
     id SERIAL PRIMARY KEY
 );
 

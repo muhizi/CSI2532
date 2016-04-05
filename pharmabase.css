@@ -1,0 +1,32 @@
+html, body {
+    margin: 0px;
+    min-height: 100%;
+    min-width: 500px;
+    width: 100%;
+}
+
+body {
+    background-image: url("r/cover.jpg");
+    background-size: cover;
+}
+
+.menu div {
+    margin-bottom: 8px;
+}
+
+.menu a {
+    background: #eee;
+    color: black;
+    display: inline-block;
+    font: 18px "Raleway";
+    left: 100px;
+    padding: 8px 15px;
+    position: relative;
+    text-decoration: none;
+    top: 150px;
+}
+
+.menu a:hover {
+    background: #dee;
+    text-decoration: underline;
+}
