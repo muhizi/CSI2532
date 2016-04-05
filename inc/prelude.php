@@ -2,6 +2,8 @@
 
 session_start();
 
+include_once "tables.php";
+
 // This is a global.
 // I know it's bad practice, but for this project it's the simplest solution.
 $db = null;

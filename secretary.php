@@ -1,5 +1,6 @@
 <?php
     include_once "inc/prelude.php";
+    include_once "inc/tables.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,24 +20,22 @@
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Secretary;";
+            $sql = "select * from pharmacy.Secretary order by lastName;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Address", "Telephone", ]);
+                datatable(["ID", "First Name", "Last Name", "Address", "Telephone"]);
 
-                while ($row = pg_fetch_row($ret)) {
+                while($row = pg_fetch_row($ret)) {
                     echo "<tr>";
                     for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-
-                    editCell("Secretary", $row[0]);
-                    deleteCell("Secretary", $row[0]);
-
-                    echo "</tr>";
+                   editCell("Secretary", $row[0]);
+                   deleteCell("Secretary", $row[0]);
+                   echo "</tr>";
                 }
 
                 endDatatable();
