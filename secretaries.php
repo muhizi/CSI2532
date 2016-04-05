@@ -16,6 +16,8 @@
             <h1>Pharmabase</h1>
         </header>
 
+        <a href="newSecretaryView.php" class="new">New</a>
+
         <?php
             connectDB();
             $sql = "select * from pharmacy.Secretary order by lastName;";

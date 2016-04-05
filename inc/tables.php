@@ -5,10 +5,6 @@ function datatable($keys) {
         echo "<td>", $key, "</td>";
     }
     echo "</tr></thead>";
-
-    // while($row = pg_fetch_row($sqlret)) {
-    //     row($row);
-    // }
 }
 
 function endDatatable() {
