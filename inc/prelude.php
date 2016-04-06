@@ -32,6 +32,13 @@ function setFlash($msg) {
     $_SESSION["flash"] = $msg;
 }
 
+function getBoolParam($param) {
+    if ($_POST[$param]) {
+        return "TRUE";
+    }
+    return "FALSE";
+}
+
 function secretarySelect($id = -1) {
     echo "<select name='secretary'>";
     connectDB();

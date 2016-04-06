@@ -1,6 +1,5 @@
 <?php
     include_once "inc/prelude.php";
-    include_once "inc/tables.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,13 +7,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Pharmabase :: Drugs</title>
-    <link rel="stylesheet" href="pharmabase.css">
+    <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
         </header>
+
+        <a href="newDrugView.php" class="new">New</a>
 
         <?php
             connectDB();
@@ -26,8 +27,16 @@
             else {
                 datatable(["ID", "Name", "Price", "Substance", "Generic?"]);
 
-                while($row = pg_fetch_row($ret)) {
-                    row($row);
+                while ($row = pg_fetch_row($ret)) {
+                    echo "<tr>";
+                    for ($i = 0; $i < 5; $i++) {
+                        echo "<td>", $row[$i], "</td>";
+                    }
+
+                    editCell("Drug", $row[0]);
+                    deleteCell("Drug", $row[0]);
+
+                    echo "</tr>";
                 }
 
                 endDatatable();
