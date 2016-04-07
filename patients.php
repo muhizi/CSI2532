@@ -13,6 +13,7 @@
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
+            <?php breadcrumb("Patients") ?>
         </header>
 
         <?php flash(); ?>

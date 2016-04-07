@@ -6,16 +6,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Drugs</title>
+    <title>Pharmabase :: Prescriptions</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
+            <?php breadcrumb("Prescriptions") ?>
         </header>
 
-        <a href="newDrugView.php" class="new">New</a>
+        <a href="newPrescriptionView.php" class="new">New</a>
 
         <?php
             connectDB();

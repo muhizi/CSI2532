@@ -13,6 +13,7 @@
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
+            <?php breadcrumb("Doctors") ?>
         </header>
 
         <a href="newDoctorView.php" class="new">New</a>

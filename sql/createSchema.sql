@@ -57,8 +57,7 @@ CREATE TABLE DrugScript (
     doctor INTEGER REFERENCES Doctor NOT NULL, -- replace with appointment
     patient INTEGER REFERENCES Patient NOT NULL,
     date DATE NOT NULL,
-    dateFulfilled DATE,
-    endValidDate DATE NOT NULL
+    validDays INTEGER
 );
 
 CREATE TABLE ProcScript (
@@ -66,8 +65,7 @@ CREATE TABLE ProcScript (
     procName VARCHAR(255) NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL,
     patient INTEGER REFERENCES Patient NOT NULL,
-    date DATE NOT NULL,
-    dateFulfilled DATE
+    date DATE NOT NULL
 );
 
 CREATE TABLE DrugConflict (

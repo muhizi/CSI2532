@@ -28,6 +28,14 @@ function flash() {
     $_SESSION["flash"] = null;
 }
 
+function breadcrumb($page) {
+    echo "<span class='breadcrumb'>";
+    echo "<a href='index.php'>HOME</a>";
+    echo " <i class='fa fa-angle-double-right'></i> ";
+    echo $page;
+    echo "</span>";
+}
+
 function setFlash($msg) {
     $_SESSION["flash"] = $msg;
 }
@@ -80,6 +88,38 @@ function sexSelect($sex = 'M') {
     else {
         echo "<option value='M'>Male</option>";
         echo "<option value='F' selected>Female</option>";
+    }
+    echo "</select>";
+}
+
+function substanceSelect($name="substance", $sub = "") {
+    echo "<select name='$name'>";
+    connectDB();
+    $ret = pg_query("select distinct substance from pharmacy.Drug order by substance;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($sub == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[0]</option>";
+    }
+    echo "</select>";
+}
+
+function pathologySelect($id = -1) {
+    echo "<select name='pathology'>";
+    connectDB();
+    $ret = pg_query("select id, name from pharmacy.Pathology order by name;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
     }
     echo "</select>";
 }

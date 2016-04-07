@@ -13,6 +13,7 @@
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
+            <?php breadcrumb("New Drug") ?>
         </header>
 
         <form action="doNewDrug.php" method="POST">

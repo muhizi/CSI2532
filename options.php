@@ -5,12 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Pharmabase :: Options</title>
-    <link rel="stylesheet" href="pharmabase.css">
+    <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
+            <?php breadcrumb("Options") ?>
         </header>
 
         <?php flash() ?>
