@@ -54,7 +54,7 @@ CREATE TABLE Drug (
 CREATE TABLE DrugScript (
     id SERIAL PRIMARY KEY,
     drug INTEGER REFERENCES Drug NOT NULL,
-    doctor INTEGER REFERENCES Doctor NOT NULL,
+    doctor INTEGER REFERENCES Doctor NOT NULL, -- replace with appointment
     patient INTEGER REFERENCES Patient NOT NULL,
     date DATE NOT NULL,
     dateFulfilled DATE,

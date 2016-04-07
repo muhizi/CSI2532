@@ -8,7 +8,7 @@
         [$_POST["name"],
         $_POST["price"],
         $_POST["substance"],
-        getBoolParam("generic"));
+        getBoolParam("generic")]);
     closeDB();
 
     if (!$ret) {

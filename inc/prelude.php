@@ -22,7 +22,7 @@ function closeDB() {
 }
 
 function flash() {
-    if ($_SESSION["flash"]) {
+    if (isset($_SESSION["flash"])) {
         include "flash.php";
     }
     $_SESSION["flash"] = null;

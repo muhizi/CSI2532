@@ -35,7 +35,7 @@
                 Last name: <input type="text" name="lastName" value="<?php echo $r[2] ?>"><br />
                 Address: <input type="text" name="address" value="<?php echo $r[3] ?>"><br />
                 Tel: <input type="text" name="tel" value="<?php echo $r[4] ?>"><br />
-                Specialty: <input type="text" name="tel" value="<?php echo $r[5] ?>"><br />
+                Specialty: <input type="text" name="specialty" value="<?php echo $r[5] ?>"><br />
                 Secretary: <?php secretarySelect($r[6]); ?>
                 <input type="submit" value="Submit">
             </form> <?php
