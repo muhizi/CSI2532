@@ -43,3 +43,5 @@ INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'Fluoroziphil', 4);
 INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'MCPEG5 Wild Gene', 3);
 INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'MCPEG5 Wild Gene', 4);
 INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'ARVT', 2);
+
+INSERT INTO DrugScript VALUES (DEFAULT, 1, 1, 1, '2016-01-01', 30);

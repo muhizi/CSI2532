@@ -66,7 +66,23 @@ function secretarySelect($id = -1) {
 function doctorSelect($id = -1) {
     echo "<select name='doctor'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Doctors order by id;");
+    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Doctor order by id;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+}
+
+function patientSelect($id = -1) {
+    echo "<select name='patient'>";
+    connectDB();
+    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Patient order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -112,6 +128,22 @@ function pathologySelect($id = -1) {
     echo "<select name='pathology'>";
     connectDB();
     $ret = pg_query("select id, name from pharmacy.Pathology order by name;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+}
+
+function drugSelect($id = -1) {
+    echo "<select name='drug'>";
+    connectDB();
+    $ret = pg_query("select id, name from pharmacy.Drug order by name;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
