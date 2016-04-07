@@ -52,6 +52,42 @@ EOF;
             }
             closeDB();
         ?>
+
+        <h2>Procedure Prescriptions</h2>
+
+        <a href="newProcScriptView.php" class="new">New</a>
+
+        <?php
+            connectDB();
+            $sql = <<<EOF
+                select s.id, s.procName, m.lastName, p.lastName, s.date
+                from pharmacy.ProcScript s
+                join pharmacy.Doctor m on s.doctor = m.id
+                join pharmacy.Patient p on s.patient = p.id;
+EOF;
+            $ret = pg_query($db, $sql);
+            if(!$ret) {
+                echo pg_last_error($db);
+            }
+            else {
+                datatable(["ID", "Procedure", "Doctor", "Patient", "Date"]);
+
+                while ($row = pg_fetch_row($ret)) {
+                    echo "<tr>";
+                    for ($i = 0; $i < 5; $i++) {
+                        echo "<td>", $row[$i], "</td>";
+                    }
+
+                    editCell("ProcScript", $row[0]);
+                    deleteCell("ProcScript", $row[0]);
+
+                    echo "</tr>";
+                }
+
+                endDatatable();
+            }
+            closeDB();
+        ?>
     </div>
 </body>
 </html>
