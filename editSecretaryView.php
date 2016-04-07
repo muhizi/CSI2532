@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pharmabase :: Edit Secretary</title>
-    <link rel="stylesheet" href="pharmabase.css">
+    <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
