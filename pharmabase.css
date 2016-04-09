@@ -6,6 +6,8 @@ html, body {
     width: 100%;
 }
 
+.hidden { display: none; }
+
 body.home {
     background-image: url("r/cover.jpg");
     background-size: cover;
@@ -75,7 +77,7 @@ form {
     width: 90%;
 }
 
-input, textarea {
+input, textarea, select {
     margin-bottom: 20px;
     margin-left: 10px;
     vertical-align: baseline;

@@ -25,6 +25,23 @@
             <input type="submit" value="Submit">
         </form>
 
+        <div class="conflicts">
+        </div>
     </div>
+
+    <script>
+    $(function() {
+        $("select[name='drug'], select[name='patient']").change(function() {
+            updateConflicts();
+        });
+        updateConflicts();
+
+        function updateConflicts() {
+            var drug = $("select[name='drug']").val();
+            var patient = $("select[name='patient']").val();
+            $(".conflicts").load("inc/patientConflicts.php?drug=" + drug + "&patient=" + patient);
+        }
+    });
+    </script>
 </body>
 </html>
